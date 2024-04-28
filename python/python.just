@@ -8,7 +8,7 @@ import 'venv.just'
 # Initialize python project with a project manager, pyproject, dev packages and docs
 init: init-pyproject init-dev-pkgs init-docs
 
-# Initialize a virtual environment
+# Initialize a virtual environment and configure the project manager to use it.
 init-venv: init-venv-python init-venv-use
 
 # Run a python repl
