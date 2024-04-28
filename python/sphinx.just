@@ -1,6 +1,7 @@
 doc_tools := 'sphinx'
 
 # Initialize docs directory with Sphinx
+[private]
 init-docs:
     #!/bin/sh
     if [ -f src/docs/conf.py ]; then
