@@ -5,7 +5,7 @@ import 'ruff.just'
 import 'sphinx.just'
 
 # Initialize python project with a project manager, pyproject, dev packages and docs
-init-project: init-pyproject init-dev-pkgs init-docs
+init: init-pyproject init-dev-pkgs init-docs
 
 # Run a python repl
 repl:
