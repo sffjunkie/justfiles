@@ -1,5 +1,5 @@
-import 'just/update.just'
-import 'python/python.just'
+import 'just/just/update.just'
+import 'just/python/python.just'
 
 project := 'just'
 
