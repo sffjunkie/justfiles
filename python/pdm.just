@@ -1,4 +1,5 @@
 pypm := 'pdm'
+pypm_run := 'pdm run'
 
 init-pyproject:
     [ -f pyproject.toml ] && echo "Project already initialised" || {{pypm}} init

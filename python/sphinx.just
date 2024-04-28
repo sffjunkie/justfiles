@@ -8,8 +8,8 @@ init-docs:
         [ -d ./docs ] && mkdir ./docs || :
         [ -d ./src/docs ] && mkdir -p ./src/docs || :
         user_name=$(git config user.name)
-        sphinx-quickstart --project={{project}} --author=${user_name} ./src/docs/
+        {{pypm_run}} sphinx-quickstart --project={{project}} --author=${user_name} ./src/docs/
     fi
 
 build-docs:
-    sphinx-build --builder html ./src/docs ./docs
+    {{pypm_run}} sphinx-build --builder html ./src/docs ./docs
