@@ -1,0 +1,7 @@
+home_dir := env_var('HOME')
+dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
+
+# Elevates a project from bluesky status
+elevate name:
+    [ ! -d {{dev_home}}/bluesky/{{name}} ] && echo "No bluesky project named {{name}} found" || exit 1
+    mv {{dev_home}}/bluesky/{{name}} {{dev_home}}/project/
