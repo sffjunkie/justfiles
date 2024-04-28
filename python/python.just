@@ -10,11 +10,11 @@ project-init: init-pyproject init-dev-pkgs init-docs
 
 # Run tox to test unit and integration tests
 test:
-    {{pypm}} run tox --workdir {{cache_dir}}/tox
+    {{pypm_run}} tox --workdir {{cache_dir}}/tox
 
 # Ron tox to test documentation generation
 test-docs:
-    {{pypm}} run tox --workdir {{cache_dir}}/tox -e doc
+    {{pypm_run}} tox --workdir {{cache_dir}}/tox -e doc
 
 # Run a python repl
 repl:
