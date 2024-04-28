@@ -1,4 +1,4 @@
-init-docs project:
+init-docs:
     #!/bin/sh
     if [ -f src/docs/conf.py ]; then
         echo "Docs already initialised"
