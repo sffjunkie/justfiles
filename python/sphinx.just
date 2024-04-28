@@ -12,8 +12,9 @@ init-docs:
         {{pypm_run}} sphinx-quickstart \
             --project={{project}} \
             --author=${user_name} \
-            -v=0.1.0 --release=0.1.0 \
-            --language=en \ 
+            -v=0.1.0 \
+            --release=0.1.0 \
+            --language=en \
             --no-sep
     fi
 
