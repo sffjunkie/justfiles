@@ -1,12 +1,12 @@
 pypm := 'pdm'
 
-python-project-init:
+project-init:
     [ -f pyproject.toml ] && echo "Project already initialised" || {{pypm}} init
 
 
-python-project-build:
+project-build:
 	pdm build
 	
 
-pdm-add-dev-pkgs:
-	
+init-dev-pkgs:
+    pdm add -dG dev {{lint_tool}} {{test_tool}} {{docs_tool}}

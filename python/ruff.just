@@ -1,3 +1,5 @@
+lint_tool := 'ruff'
+
 # Lint the source
 project-lint:
     #!/bin/sh

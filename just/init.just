@@ -8,17 +8,17 @@ dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 project_home := env_var_or_default("DEVELOPMENT_PROJECT_HOME", dev_home)
 
 default:
-    just --list
+    @just --list --unsorted
 
 init: (init-project name type) (init-just name)
 
 [no-cd]
-init-project name:
+init-project name type:
     #!/bin/sh
     if [ ! -d "{{project_home}}/{{name}}" ]; then
         mkdir -p ~/development/project/{{name}}
-        echo "[project]" > {{project_home}}/{{name}}/.project
-        echo "name={{name}}" >> {{project_home}}/{{name}}/.project
+        echo "PROJECT_NAME={{name}}" > {{project_home}}/{{name}}/.project
+        echo "PROJECT_TYPE={{type}}" >> {{project_home}}/{{name}}/.project
     else
         echo "Project {{name}} already exists"
     fi
