@@ -1,6 +1,5 @@
 import 'just/just/update.just'
 import 'just/python/python.just'
-import 'just/project/elevate.just'
 
 set dotenv-filename := ".project"
 
