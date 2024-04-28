@@ -32,11 +32,16 @@ init-bluesky name language=default_language:
         echo "Blueskey project {{name}} already exists"
     fi
 
+[no-cd]
+init-just:
     #!/bin/sh
-    [ ! "{{name}}" = "." ] && cd {{dev_home}}/{{project_stage}}/{{name}}
-
+    if [ ! -f ./.project ]; then
+        echo "Not in a managed project"
+        exit 1
+    fi
+    
     if [ ! -d ./just ]; then
-        echo "Extracting files from '{{just_repo}}' branch '{{just_branch}}'"
+        echo "Retrieving branch '{{just_branch}}' from '{{just_repo}}'"
         git clone -b {{just_branch}} {{just_repo}} just
     fi
 
