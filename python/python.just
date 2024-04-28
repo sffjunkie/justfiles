@@ -6,7 +6,7 @@ import 'sphinx.just'
 
 alias build := project-build
 
-project-init: init-dirs init-dev-pkgs init-docs
+project-init: init-dirs init-pyproject init-dev-pkgs init-docs
 
 init-dirs:
     [ -d ./docs ] && mkdir ./docs || :
