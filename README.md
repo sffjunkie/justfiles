@@ -9,15 +9,38 @@ I currently categorize projects into 2 stages
 1. bluesky - Where I create projects I'm tinkering with that haven't been released to the world
 2. project - Projects that are released on Github
 
-Development related files are stored in `$HOME/development` with `project` and
-`bluesky` under this.
-
 There are 2 main Justfiles
 
 1. `Justfile.init`
    - Initializes a new project with `init-project` and `init-bluesky` recipes.
    - Retrieves the main Justfiles from Github with `init-just`
 2. `Justfile` - The main entry point for project management
+
+## Development Layout
+
+Development related files are stored in `$HOME/development` with the folowing structure
+
+```
+project
+    <project-name>
+bluesky
+    <project-name>
+venv
+    <project-name>
+        <python-version>
+```
+
+## Project layout
+
+The current project layout is as follows
+
+```
+src
+    <project name>
+    docs - source files for the documentation
+tests
+docs - Built documentation
+```
 
 ## `Justfile.init`
 
@@ -41,29 +64,17 @@ Use the following to download the Justfiles to the current directory
 just -f <path to Justfile.init> init-just
 ```
 
-## Project layout
-
-The current project layout is as follows
-
-```
-src
-    <project name>
-    docs - source files for the documentation
-tests
-docs - Built documentation
-```
-
 ## `Justfile`
 
 Main recipes for project management
 
 Running `just` will display a list of the recipes.
 
-## Justfile
+### Justfile
 
 `update-just` - Updates the local Justfiles from Github
 
-## Python
+### Python
 
 For Python projects I'm currently using the following tools
 
@@ -73,17 +84,18 @@ For Python projects I'm currently using the following tools
 - [mypy](https://mypy.readthedocs.io/en/stable/) - https://github.com/python/mypy
 - [sphinx](https://www.sphinx-doc.org/en/master/) - https://github.com/sphinx-doc/sphinx
 
-### Python Recipes
-
-`init` - Initializes a new project using `pdm`,
-adds the required development packages
-and creates a set of documentation files.
-
-Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `init-docs`
+#### Python Recipes
 
 `build` - Uses `pdm` to build the distribution files
 
 `build-docs` - Builds the documentation using Sphinx
+
+`init` - Initializes a new project using `pdm`,
+adds the required development packages
+and creates a set of documentation files.
+Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `init-docs`
+
+`init-venv` - Intializes a virtual environment as configures the project manager to use it
 
 `lint` - Runs the `ruff` linter
 
