@@ -13,7 +13,8 @@ init-docs:
             --project={{project}} \
             --author=${user_name} \
             -v=0.1.0 --release=0.1.0 \
-            --language=en
+            --language=en \ 
+            --no-sep
     fi
 
 build-docs:
