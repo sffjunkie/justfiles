@@ -11,6 +11,7 @@ init-docs:
         user_name=$(git config user.name)
         cd ./src/docs
         {{pypm_run}} sphinx-quickstart \
+            -q \
             -v="0.1.0" \
             --release="0.1.0" \
             --project="{{project_name}}" \
