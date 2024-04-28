@@ -1,5 +1,5 @@
-project_language := 'python'
-project_stage := 'project'  # or 'bluesky'
+default_language := 'python'
+default_stage := 'project'  # or 'bluesky'
 
 just_repo := 'https://github.com/sffjunkie/just'
 just_branch := 'poc'
@@ -10,15 +10,13 @@ dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 default:
     @just --list --unsorted
 
-init: (init-project project_name project_language) (init-just project_name)
-
 [no-cd]
-init-project project_name project_language=project_language project_stage=project_stage:
+init-project name language=default_language:
     #!/bin/sh
-    if [ ! -d {{dev_home}}/{{project_stage}}/{{name}} ]; then
-        mkdir -p {{dev_home}}/{{project_stage}}/{{name}}
-        echo "PROJECT_NAME={{name}}" > {{dev_home}}/{{project_stage}}/{{name}}/.project
-        echo "PROJECT_LANGUAGE={{project_language}}" >> {{dev_home}}/{{project_stage}}/{{name}}/.project
+    if [ ! -d "{{dev_home}}/project/{{name}}" ]; then
+        mkdir -p "{{dev_home}}/project/{{name}}"
+        echo "PROJECT_NAME={{name}}" > {{dev_home}}/project/{{name}}/.project
+        echo "PROJECT_LANGUAGE={{language}}" >> {{dev_home}}/project/{{name}}/.project
     else
         echo "Project {{name}} already exists"
     fi
