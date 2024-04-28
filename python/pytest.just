@@ -1,4 +1,4 @@
-test_tool := 'pytest'
+test_tools := 'pytest tox'
 
 # Run unit tests
 test-unit:
@@ -21,3 +21,11 @@ test-coverage-html:
 # Show test coverage in the terminal
 test-coverage-term:
     {{pypm_run}} coverage report
+
+# Run tox to test unit and integration tests
+test:
+    {{pypm_run}} tox --workdir {{cache_dir}}/tox
+
+# Ron tox to test documentation generation
+test-docs:
+    {{pypm_run}} tox --workdir {{cache_dir}}/tox -e doc

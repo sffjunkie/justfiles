@@ -9,14 +9,6 @@ alias build := build-project
 # Initialize python project with a project manager, pyproject, dev packages and docs
 project-init: init-pyproject init-dev-pkgs init-docs
 
-# Run tox to test unit and integration tests
-test:
-    {{pypm_run}} tox --workdir {{cache_dir}}/tox
-
-# Ron tox to test documentation generation
-test-docs:
-    {{pypm_run}} tox --workdir {{cache_dir}}/tox -e doc
-
 # Run a python repl
 repl:
     @{{pypm}} run python
