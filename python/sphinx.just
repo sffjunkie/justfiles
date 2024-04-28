@@ -5,8 +5,8 @@ init-docs:
     if [ -f src/docs/conf.py ]; then
         echo "Docs already initialised"
     else
-        [ -d ./docs ] && mkdir ./docs || :
-        [ -d ./src/docs ] && mkdir -p ./src/docs || :
+        [ ! -d ./docs ] && mkdir ./docs || :
+        [ ! -d ./src/docs ] && mkdir -p ./src/docs || :
         user_name=$(git config user.name)
         cd ./src/docs
         {{pypm_run}} sphinx-quickstart \
