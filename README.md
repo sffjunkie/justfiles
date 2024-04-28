@@ -95,7 +95,7 @@ adds the required development packages
 and creates a set of documentation files.
 Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `init-docs`
 
-`init-venv` - Intializes a virtual environment as configures the project manager to use it
+`init-venv` - Intializes a virtual environment as configures the project manager `pdm` to use it
 
 `lint` - Runs the `ruff` linter
 
