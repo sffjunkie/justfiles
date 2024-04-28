@@ -11,6 +11,6 @@ dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 project_home := env_var_or_default("DEVELOPMENT_PROJECT_HOME", dev_home + "/project")
 cache_dir := dev_home + '/cache/' + project_name
 
-# Show this list
+[private]
 default:
     @just --list
