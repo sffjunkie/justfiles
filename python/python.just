@@ -4,7 +4,7 @@ import 'pytest.just'
 import 'ruff.just'
 import 'sphinx.just'
 
-alias build := project-build
+alias build := build-project
 
 project-init: init-pyproject init-dev-pkgs init-docs
 
