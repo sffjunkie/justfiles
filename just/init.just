@@ -20,6 +20,7 @@ init-project name language=default_language:
     else
         echo "Project {{name}} already exists"
     fi
+    cd "{{dev_home}}/project/{{name}}"
 
 [no-cd]
 init-bluesky name language=default_language:
@@ -31,6 +32,7 @@ init-bluesky name language=default_language:
     else
         echo "Blueskey project {{name}} already exists"
     fi
+    cd "{{dev_home}}/bluesky/{{name}}"
 
 [no-cd]
 init-just:
