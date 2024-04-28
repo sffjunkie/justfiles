@@ -10,5 +10,6 @@ build-project:
 	pdm build
 
 # Initialize development packages
+[private]
 init-dev-pkgs:
     pdm add -dG dev {{lint_tool}} {{test_tool}} {{docs_tool}}
