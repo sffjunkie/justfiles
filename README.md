@@ -12,9 +12,9 @@ I currently categorize projects into 2 stages
 There are 2 main Justfiles
 
 1. `Justfile.init`
-   - Initializes a new project with `init-project` and `init-bluesky` recipes.
-   - Retrieves the main Justfiles from Github with `init-just`
-2. `Justfile` - The main entry point for project management
+   - Initializes a new project with `init-project` and `init-bluesky` recipes. Can be run from any directory.
+   - Retrieves the main Justfiles from Github with `init-just`. Run from within the project diredctory.
+2. `Justfile` - The main entry point for project management. Includes the other Justfiles.
 
 ## Development Layout
 
