@@ -22,7 +22,16 @@ init-project name language=default_language:
     fi
 
 [no-cd]
-init-just name=".":
+init-bluesky name language=default_language:
+    #!/bin/sh
+    if [ ! -d "{{dev_home}}/bluesky/{{name}}" ]; then
+        mkdir -p "{{dev_home}}/bluesky/{{name}}"
+        echo "PROJECT_NAME={{name}}" > {{dev_home}}/bluesky/{{name}}/.project
+        echo "PROJECT_LANGUAGE={{language}}" >> {{dev_home}}/bluesky/{{name}}/.project
+    else
+        echo "Blueskey project {{name}} already exists"
+    fi
+
     #!/bin/sh
     [ ! "{{name}}" = "." ] && cd {{dev_home}}/{{project_stage}}/{{name}}
 
