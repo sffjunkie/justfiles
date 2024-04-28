@@ -1,5 +1,6 @@
 docs_tool := 'sphinx'
 
+# Initialize docs directory with Sphinx
 init-docs:
     #!/bin/sh
     if [ -f src/docs/conf.py ]; then
@@ -18,5 +19,6 @@ init-docs:
             --no-sep
     fi
 
+# Build docs with Sphinx
 build-docs:
     {{pypm_run}} sphinx-build --builder html ./src/docs ./docs
