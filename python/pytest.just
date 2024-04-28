@@ -9,7 +9,7 @@ test-integration:
 export COVERAGE_FILE := cache_dir + '/coverage'
 # Generate test coverage metrics
 test-coverage:
-    {{pypm_run}} pytest -o cache_dir={{cache_dir}}/pytest --cov=src/{{project}} src/test
+    {{pypm_run}} pytest -o cache_dir={{cache_dir}}/pytest --cov=src/{{project_name}} src/test
 
 # Generate test coverage HTML report
 test-coverage-html:
