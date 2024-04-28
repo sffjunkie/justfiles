@@ -8,7 +8,7 @@ init-pyproject:
     [ -f pyproject.toml ] && echo "Project already initialised" || {{pypm}} init
 
 # Build the project
-build-project:
+build:
 	pdm build
 
 # Initialize development packages
