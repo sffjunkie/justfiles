@@ -12,6 +12,5 @@ build-project:
 	pdm build
 
 # Initialize development packages
-[private]
 init-dev-pkgs:
     {{pypm_add_dev}} {{lint_tools}} {{test_tools}} {{doc_tools}}
