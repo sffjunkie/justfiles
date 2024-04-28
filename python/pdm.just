@@ -5,7 +5,7 @@ pypm_add_dev := 'pdm add -dG dev'
 
 # Create a pyproject.toml
 init-pyproject:
-    [ -f pyproject.toml ] && echo "Project already initialised" || {{pypm}} init
+    @[ -f pyproject.toml ] && echo "Project already initialised" || {{pypm}} init
 
 # Build the project
 build:
