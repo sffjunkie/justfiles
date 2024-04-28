@@ -1,3 +1,4 @@
+# Initialize a virtual environment
 init-venv-python:
     #!/bin/sh
     mkdir -p {{dev_home}}/venv/{{project_name}}

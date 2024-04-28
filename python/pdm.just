@@ -15,6 +15,7 @@ build:
 init-dev-pkgs:
     {{pypm_add_dev}} {{lint_tools}} {{test_tools}} {{doc_tools}}
 
+# Set the virtual environment to use
 init-venv-use:
     #!/bin/sh
     py_ver=$(python -c 'import sys; print(".".join([str(x) for x in tuple(sys.version_info)[:2]]))')
