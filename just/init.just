@@ -3,16 +3,25 @@ type := 'python'
 just_repo := 'https://github.com/sffjunkie/just'
 just_branch := 'poc'
 
+home_dir := env_var('HOME')
+dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
+project_home := env_var_or_default("DEVELOPMENT_PROJECT_HOME", dev_home)
+
 default:
     just --list
 
-init: (init-project name) (init-just name)
+init: (init-project name type) (init-just name)
 
 [no-cd]
 init-project name:
     #!/bin/sh
-    mkdir -p ~/development/project/{{name}}
-    cd ~/development/project/{{name}}
+    if [ ! -d "{{project_home}}/{{name}}" ]; then
+        mkdir -p ~/development/project/{{name}}
+        echo "[project]" > {{project_home}}/{{name}}/.project
+        echo "name={{name}}" >> {{project_home}}/{{name}}/.project
+    else
+        echo "Project {{name}} already exists"
+    fi
 
 [no-cd]
 init-just name=".":
@@ -25,7 +34,3 @@ init-just name=".":
     fi
 
     [ ! -h Justfile ] && ln -s just/Justfile Justfile || :
-
-update-just:
-    cd ./just
-    git

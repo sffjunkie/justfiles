@@ -1,51 +1,17 @@
-import './just/python/pdm.just'
-import './just/python/sphinx.just'
+import 'pdm.just'
+import 'sphinx.just'
 
-pypm := 'pdm'
 lint_tool := 'ruff'
 test_tool := 'pytest'
 docs_tool := 'sphinx'
 
-init-project:
-    #!/bin/sh
-    if [ -f pyproject.toml ]; then
-        echo "Project already initialised"
-    else
-        {{pypm}} init
-    fi
+alias build := python-project-build
 
 init-src:
     mkdir -p src/{{project}}
 
-init-docs:
-    #!/bin/sh
-    if [ -f src/docs/conf.py ]; then
-        echo "Docs already initialised"
-    else
-        mkdir -p docs
-        mkdir -p src/docs
-        pdm add -dG dev {{docs_tool}}
-        user_name=$(git config user.name)
-        sphinx-quickstart --project={{project}} --author=${user_name} .
-    fi
-
-init-dev-pkgs:
+init-dev-pkgs: 
     pdm add -dG dev {{lint_tool}} {{test_tool}}
-
-# Lint the source
-lint:
-    #!/bin/sh
-    command -v {{lint_tool}} &>/dev/null  && prefix="" || prefix="pdm run"
-    ${prefix} {{lint_tool}} check --config "cache-dir = '{{cache_dir}}/ruff'" src/{{project}}
-    if [ $? -eq 0 ]; then
-        echo "{{lint_tool}}: no problems found"
-    fi
-
-build:
-    {{pypm}} build
-
-build-docs:
-    {{docs_tool_build}}
 
 # Run tox to test unit and integration tests
 test:
