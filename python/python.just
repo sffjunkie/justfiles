@@ -6,11 +6,12 @@ import 'sphinx.just'
 
 alias build := project-build
 
-python-project-init: init-src init-dev-pkgs init-docs
+project-init: init-dirs init-dev-pkgs init-docs
 
-init-src:
-    [ -d docs ] && mkdir docs || :
-    [ -d src/{{project}} ] && mkdir -p src/{{project}} || :
+init-dirs:
+    [ -d ./docs ] && mkdir ./docs || :
+    [ -d ./src/docs ] && mkdir -p ./src/docs || :
+    [ -d ./src/{{project}} ] && mkdir -p ./src/{{project}} || :
 
 # Run tox to test unit and integration tests
 test:
