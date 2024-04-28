@@ -1,5 +1,7 @@
 pypm := 'pdm'
 pypm_run := 'pdm run'
+pypm_add := 'pdm add'
+pypm_add_dev := 'pdm add -dG dev'
 
 # Create a pyproject.toml
 init-pyproject:
@@ -12,4 +14,4 @@ build-project:
 # Initialize development packages
 [private]
 init-dev-pkgs:
-    pdm add -dG dev {{lint_tool}} {{test_tool}} {{docs_tool}}
+    {{pypm_add_dev}} {{lint_tools}} {{test_tools}} {{doc_tools}}
