@@ -1,3 +1,5 @@
+docs_tool := 'sphinx'
+
 init-docs:
     #!/bin/sh
     if [ -f src/docs/conf.py ]; then
