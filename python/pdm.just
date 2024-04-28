@@ -14,3 +14,8 @@ build:
 # Initialize development packages
 init-dev-pkgs:
     {{pypm_add_dev}} {{lint_tools}} {{test_tools}} {{doc_tools}}
+
+init-venv-use:
+    #!/bin/sh
+    py_ver=$(python -c 'import sys; print(".".join([str(x) for x in tuple(sys.version_info)[:2]]))')
+    pdm use {{dev_home}}/venv/{{project_name}}/$py_ver/bin/python
