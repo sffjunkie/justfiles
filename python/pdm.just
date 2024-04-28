@@ -3,14 +3,14 @@ pypm_run := 'pdm run'
 pypm_add := 'pdm add'
 pypm_add_dev := 'pdm add -dG dev'
 
+# Build the project
+build:
+	pdm build
+
 # Create a pyproject.toml
 [private]
 init-pyproject:
     @[ -f pyproject.toml ] && echo "Project already initialised" || {{pypm}} init
-
-# Build the project
-build:
-	pdm build
 
 # Initialize development packages
 [private]
