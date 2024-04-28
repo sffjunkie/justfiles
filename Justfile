@@ -13,4 +13,4 @@ cache_dir := dev_home + '/cache/' + project_name
 
 # Show this list
 default:
-    @just --list --unsorted
+    @just --list
