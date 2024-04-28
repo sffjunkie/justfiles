@@ -1,7 +1,7 @@
 lint_tools := 'ruff'
 
 # Lint the source
-project-lint:
+lint-project:
     #!/bin/sh
     command -v ruff &>/dev/null  && prefix="" || prefix={{pypm_run}}
     ${prefix} ruff check --config "cache-dir = '{{cache_dir}}/ruff'" src/{{project_name}}
