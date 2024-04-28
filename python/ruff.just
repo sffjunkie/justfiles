@@ -1,4 +1,4 @@
-lint_tool := 'ruff'
+lint_tools := 'ruff'
 
 # Lint the source
 project-lint:

@@ -1,4 +1,4 @@
-docs_tool := 'sphinx'
+doc_tools := 'sphinx'
 
 # Initialize docs directory with Sphinx
 init-docs:
