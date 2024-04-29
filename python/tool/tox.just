@@ -1,5 +1,3 @@
-test_tools := 'pytest tox'
-
 # Run unit tests
 test-unit:
     {{pypm_run}} pytest -k unit
@@ -7,6 +5,10 @@ test-unit:
 # Run integration tests
 test-integration:
     {{pypm_run}} pytest -k integration
+
+# Ron tox to test documentation generation
+test-docs:
+    {{pypm_run}} tox --workdir {{cache_dir}}/tox -e doc
 
 export COVERAGE_FILE := cache_dir + '/coverage'
 # Generate test coverage metrics
@@ -21,11 +23,3 @@ test-coverage-html:
 # Show test coverage in the terminal
 test-coverage-term:
     {{pypm_run}} coverage report
-
-# Run tox to test unit and integration tests
-test:
-    {{pypm_run}} tox --workdir {{cache_dir}}/tox
-
-# Ron tox to test documentation generation
-test-docs:
-    {{pypm_run}} tox --workdir {{cache_dir}}/tox -e doc
