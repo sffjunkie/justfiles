@@ -2,7 +2,7 @@ default_language := 'python'
 default_stage := 'project'  # or 'bluesky'
 
 just_repo := 'https://github.com/sffjunkie/justfiles'
-just_branch := 'main'
+just_branch := env_var_or_default('JUSTFILES_BRANCH', 'main')
 
 home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
