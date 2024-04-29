@@ -8,7 +8,7 @@ home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 
 default:
-    @just --list --unsorted
+    @just --list --unsorted --justfile {{justfile()}}
 
 [no-cd]
 init-project name language=default_language: (_init-base name "project" language) init-just
