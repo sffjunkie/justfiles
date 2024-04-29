@@ -9,6 +9,7 @@ project_language := env_var("PROJECT_LANGUAGE")
 home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 project_home := env_var_or_default("DEVELOPMENT_PROJECT_HOME", dev_home + "/project")
+venv_home := env_var_or_default("DEVELOPMENT_VENV_HOME", dev_home + "/venv")
 cache_dir := dev_home + '/cache/' + project_name
 
 [private]

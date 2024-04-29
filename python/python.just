@@ -5,11 +5,10 @@ import 'ruff.just'
 import 'sphinx.just'
 import 'venv.just'
 
-# Initialize python project with a project manager, pyproject, dev packages and docs
-init: init-pyproject init-dev-pkgs init-docs
+default_python_version := '3.11'
 
-# Initialize a virtual environment and configure the project manager to use it.
-init-venv: init-venv-python init-venv-use
+# Initialize python project with a venv, project manager, pyproject.toml, dev packages and docs
+init-project: init-venv-python init-pyproject init-dev-pkgs init-docs
 
 # Run a python repl
 repl:
