@@ -11,10 +11,10 @@ default:
     @just --list --unsorted --justfile {{justfile()}}
 
 [no-cd]
-init-project name language='python': (_init-base name "project" language) init-just
+init-project name language='python': (_init-base name "project" language) (init-just name "project" language)
 
 [no-cd]
-init-bluesky name language='python': (_init-base name "bluesky" language) init-just
+init-bluesky name language='python': (_init-base name "bluesky" language) (init-just name "bluesky" language)
 
 [no-cd]
 _init-base name stage language:
@@ -31,12 +31,13 @@ _init-base name stage language:
 
 
 [no-cd]
-init-just:
+init-just name stage language:
     #!/bin/sh
-    if [ ! -f ./.project ]; then
-        echo "Not in a managed project"
+    if [ ! -f .{{dev_home}}/{{stage}}/{{name}}/.project ]; then
+        echo "Not a managed project"
         exit 1
     fi
+    cd {{dev_home}}/{{stage}}/{{name}}
     
     if [ ! -d ./just ]; then
         echo "Retrieving branch '{{just_branch}}' from '{{just_repo}}'"
