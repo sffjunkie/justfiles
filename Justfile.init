@@ -7,6 +7,7 @@ just_branch := env_var_or_default('JUSTFILES_BRANCH', 'main')
 home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 
+[private]
 default:
     @just --list --unsorted --justfile {{justfile()}}
 
