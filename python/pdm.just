@@ -14,7 +14,7 @@ init-pyproject:
     if grep -q "PYTHON_VERSION=" .project; then
         py_ver=$(sed -nE "s/^PYTHON_VERSION=([0-9]+(\.[0-9]+(\.[0-9]+)?)?)/\1/p" .project)
         venv_python={{venv_home}}/{{project_name}}/$py_ver/bin/python
-        @[ -f pyproject.toml ] && echo "Project already initialised" || pdm init --python=$venv_python
+        [ -f pyproject.toml ] && echo "Project already initialised" || pdm init --python=$venv_python
     else
         echo "Python version not set in .project. Run init-venv-python recipe first"
     fi
