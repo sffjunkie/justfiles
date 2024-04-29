@@ -21,5 +21,5 @@ init-dev-pkgs:
 [private]
 init-venv-use:
     #!/bin/sh
-    py_ver=$(py_ver=$(sed -nE 's/^requires-python\s?=\s?"[~>=]=(3\.[0-9]+)"$/\1/p' pyproject.toml))
+    py_ver=$(sed -nE 's/^requires-python\s?=\s?"[~>=]=(3\.[0-9]+)"$/\1/p' pyproject.toml)
     pdm use {{dev_home}}/venv/{{project_name}}/$py_ver/bin/python
