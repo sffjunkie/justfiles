@@ -11,20 +11,12 @@ default:
     @just --list --unsorted
 
 [no-cd]
-init-project name language=default_language:
-    #!/bin/sh
-    if [ ! -d "{{dev_home}}/project/{{name}}" ]; then
-        mkdir -p "{{dev_home}}/project/{{name}}"
-        echo "PROJECT_NAME={{name}}" > {{dev_home}}/project/{{name}}/.project
-        echo "PROJECT_LANGUAGE={{language}}" >> {{dev_home}}/project/{{name}}/.project
-    else
-        echo "Project {{name}} already exists"
-    fi
-    cd "{{dev_home}}/project/{{name}}"
+init-project name language=default_language: (_init-base name "project" language) init-just
 
 [no-cd]
-init-bluesky name language=default_language: (_init-base name "bluesky" language)
+init-bluesky name language=default_language: (_init-base name "bluesky" language) init-just
 
+[no-cd]
 _init-base name stage language:
     #!/bin/sh
     if [ ! -d "{{dev_home}}/{{stage}}/{{name}}" ]; then
@@ -50,4 +42,4 @@ init-just:
         git clone -b {{just_branch}} {{just_repo}} just
     fi
 
-    [ ! -h Justfile ] && ln -s just/Justfile Justfile || :
+    [ ! -h Justfile ] && ln -s just/Justfile.main Justfile || :
