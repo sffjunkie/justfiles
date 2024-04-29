@@ -33,7 +33,7 @@ _init-base name stage language:
 [no-cd]
 init-just name stage language:
     #!/bin/sh
-    if [ ! -f .{{dev_home}}/{{stage}}/{{name}}/.project ]; then
+    if [ ! -f {{dev_home}}/{{stage}}/{{name}}/.project ]; then
         echo "Not a managed project"
         exit 1
     fi
