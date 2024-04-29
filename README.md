@@ -1,4 +1,4 @@
-# just -  A collection of Justfiles for development tasks
+# justfiles -  A collection of Justfiles for development tasks
 
 A set of [Justfiles](https://github.com/casey/just) for my development tasks.
 
