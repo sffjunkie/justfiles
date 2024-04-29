@@ -11,10 +11,10 @@ default:
     @just --list --unsorted --justfile {{justfile()}}
 
 [no-cd]
-init-project name language=default_language: (_init-base name "project" language) init-just
+init-project name language='python': (_init-base name "project" language) init-just
 
 [no-cd]
-init-bluesky name language=default_language: (_init-base name "bluesky" language) init-just
+init-bluesky name language='python': (_init-base name "bluesky" language) init-just
 
 [no-cd]
 _init-base name stage language:
