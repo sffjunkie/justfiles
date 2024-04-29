@@ -12,10 +12,10 @@ default:
     @just --list --unsorted --justfile {{justfile()}}
 
 [no-cd]
-init-project name language='python': (_init-base name "project" language) (init-just name "project" language)
+init-project name language='python': (_init-base name "project" language) (init-just name "project")
 
 [no-cd]
-init-bluesky name language='python': (_init-base name "bluesky" language) (init-just name "bluesky" language)
+init-bluesky name language='python': (_init-base name "bluesky" language) (init-just name "bluesky")
 
 [no-cd]
 _init-base name stage language:
@@ -32,7 +32,7 @@ _init-base name stage language:
 
 
 [no-cd]
-init-just name stage language:
+init-just name stage:
     #!/bin/sh
     if [ ! -f {{dev_home}}/{{stage}}/{{name}}/.project ]; then
         echo "Not a managed project"
