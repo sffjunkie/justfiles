@@ -9,5 +9,6 @@ just-main:
 
 just-develop:
     cd just
+    echo $(pwd)
     git checkout develop
     cd ..
