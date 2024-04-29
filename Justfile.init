@@ -19,6 +19,7 @@ init-bluesky name language='python': (_init-base name "bluesky" language) init-j
 [no-cd]
 _init-base name stage language:
     #!/bin/sh
+    echo "Initializing project {{name}}"
     if [ ! -d "{{dev_home}}/{{stage}}/{{name}}" ]; then
         mkdir -p "{{dev_home}}/{{stage}}/{{name}}"
         echo "PROJECT_NAME={{name}}" > {{dev_home}}/{{stage}}/{{name}}/.project
