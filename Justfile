@@ -4,7 +4,7 @@ import 'just/python/python.just'
 set dotenv-filename := ".project"
 
 project_name := env_var("PROJECT_NAME")
-project_language := env_var("PROJECT_LANGUAGE")
+project_language := env_var_or_default("PROJECT_LANGUAGE", "python")
 
 home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
