@@ -24,7 +24,7 @@ just --justfile=Justfile.init init-project <project-name>
 
 to create a project `<project-name>` under `$HOME/development/project`.
 
-The `cd` to `$HOME/development/project<project-name>` and run
+Then `cd` to `$HOME/development/project<project-name>` and run
 
 ```sh
 just init-project
