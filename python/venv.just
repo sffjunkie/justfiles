@@ -2,9 +2,9 @@
 init-venv-python:
     #!/bin/sh
     venv_dir={{venv_home}}/{{project_name}}/
-    mkdir -p $venv_dir
-
     py_ver=$(python -c 'import sys; print(".".join([str(x) for x in tuple(sys.version_info)[:2]]))')
+    [ -d $venv_dir/$py_ver ] && echo "venv already exists in $venv_dir/$py_ver"; exit 0 || :
+    mkdir -p $venv_dir
     python -m venv $venv_dir/$py_ver
 
     grep -q "PYTHON_VERSION=" .project
