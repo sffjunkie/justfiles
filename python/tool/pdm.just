@@ -9,10 +9,14 @@ build:
 
 # Add distribution
 add +names:
+    #!/bin/sh
+    [ ! -f pyproject.toml ] && "The pyproject.toml has not been initialized yet. You can do this by running `just init-project`" && exit 1
     pdm add {{names}}
 
 # Add distribution for development
 add-dev +names:
+    #!/bin/sh
+    [ ! -f pyproject.toml ] && "The pyproject.toml has not been initialized yet. You can do this by running `just init-project`" && exit 1
     pdm add -dG dev {{names}}
 
 # Create a pyproject.toml 
