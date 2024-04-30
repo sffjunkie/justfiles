@@ -32,14 +32,12 @@ _init-base name stage language:
 
 
 [no-cd]
-init-just name stage:
+init-just name="" stage="":
     #!/bin/sh
-    if [ ! -f {{dev_home}}/{{stage}}/{{name}}/.project ]; then
-        echo "Not a managed project"
-        exit 1
+    if [ "{{name}}" != "" ] && [ "{{stage}}" != "" ]; then
+        cd {{dev_home}}/{{stage}}/{{name}}
     fi
-    cd {{dev_home}}/{{stage}}/{{name}}
-    
+
     if [ ! -d ./just ]; then
         echo "Retrieving branch '{{just_branch}}' from '{{just_repo}}'"
         git clone -b {{just_branch}} {{just_repo}} just
