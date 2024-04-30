@@ -20,7 +20,7 @@ There are 2 main Justfiles
 
 Development related files are stored in `$HOME/development` with the folowing structure
 
-```
+```text
 project
     <project-name>
 bluesky
@@ -34,7 +34,7 @@ venv
 
 The current project layout is as follows
 
-```
+```text
 src
     <project name>
     docs - source files for the documentation
