@@ -7,6 +7,14 @@ pypm_add_dev := 'pdm add -dG dev'
 build:
 	pdm build
 
+# Add distribution
+add +names:
+    pdm add {{names}}
+
+# Add distribution for development
+add-dev +names:
+    pdm add -dG dev {{names}}
+
 # Create a pyproject.toml 
 [private]
 init-pyproject:
