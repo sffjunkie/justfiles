@@ -13,7 +13,6 @@ python-info:
     for path in sys.path[1:]:
         print(f"                 {path}")
 
-
 # Build the project
 build:
 	pdm build
