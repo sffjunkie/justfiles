@@ -82,6 +82,10 @@ Running `just` will display a list of the recipes.
 
 `build-docs` - Builds the documentation using Sphinx
 
+`add` - Add distributions to the project
+
+`add-dev` - Add distributions for development tasks
+
 `init` - Initializes a new project using `pdm`,
 adds the required development packages
 and creates a set of documentation files.
