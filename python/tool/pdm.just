@@ -19,8 +19,8 @@ add-dev +names:
     [ ! -f pyproject.toml ] && echo "The pyproject.toml has not been initialized yet. You can do this by running \`just init-project\`" && exit 1
     pdm add -dG dev {{names}}
 
-run-module name=project_name:
-    pdm run python -m {{name}}
+run-module name=project_name *args:
+    pdm run python -m {{name}} {{args}}
 
 # Create a pyproject.toml 
 [private]
