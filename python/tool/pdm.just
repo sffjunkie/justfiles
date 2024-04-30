@@ -3,6 +3,7 @@ pypm_run := 'pdm run'
 pypm_add := 'pdm add'
 pypm_add_dev := 'pdm add -dG dev'
 
+# Display python information
 python-info:
     #!/usr/bin/env -S pdm run python
     import sys
@@ -29,9 +30,11 @@ add-dev +names:
     [ ! -f pyproject.toml ] && echo "The pyproject.toml has not been initialized yet. You can do this by running \`just init-project\`" && exit 1
     pdm add -dG dev {{names}}
 
+# Run python code 
 run *args:
     pdm run python -c '{{args}}'
 
+# Run the project's module
 run-module *args:
     pdm run python -m {{project_name}} {{args}}
 
