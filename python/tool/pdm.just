@@ -9,7 +9,9 @@ python-info:
     print(f"python prefix:   {sys.prefix}")
     print(f"python version:  {sys.version}")
     print(f"python platform: {sys.platform}")
-    print(f"python path:     {sys.path}")
+    print("python path:")
+    for path in sys.path:
+        print(f"                 {sys.path}")
 
 
 # Build the project
