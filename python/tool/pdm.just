@@ -9,8 +9,8 @@ python-info:
     print(f"python prefix:   {sys.prefix}")
     print(f"python version:  {sys.version}")
     print(f"python platform: {sys.platform}")
-    print("python path:")
-    for path in sys.path:
+    print(f"python path:     {sys.path[0]}")
+    for path in sys.path[1:]:
         print(f"                 {path}")
 
 
