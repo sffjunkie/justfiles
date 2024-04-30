@@ -3,6 +3,15 @@ pypm_run := 'pdm run'
 pypm_add := 'pdm add'
 pypm_add_dev := 'pdm add -dG dev'
 
+python-info:
+    #!/usr/bin/env python
+    import sys
+    print(f"python prefix:   {sys.prefix}")
+    print(f"python version:  {sys.version}")
+    print(f"python platform: {sys.platform}")
+    print(f"python path:     {sys.path}")
+
+
 # Build the project
 build:
 	pdm build
