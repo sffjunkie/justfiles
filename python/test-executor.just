@@ -4,4 +4,5 @@ import 'tool/tox.just'
 
 test_tools := 'coverage pytest tox'
 
-test: test-unit test-integration test-docs
+# Run type, unit, integration, and documentation tests
+test: test-types test-unit test-integration test-docs

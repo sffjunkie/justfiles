@@ -13,8 +13,22 @@ There are 2 main Justfiles
 
 1. `Justfile.init`
    - Initializes a new project with `init-project` and `init-bluesky` recipes. Can be run from any directory.
-   - Retrieves the main Justfiles from Github with `init-just`. Run from within the project diredctory.
+   - Both also retrieve the main Justfiles from Github.
 2. `Justfile` - The main entry point for project management. Includes the other Justfiles.
+
+Download [Justfile.init](https://raw.githubusercontent.com/sffjunkie/justfiles/main/Justfile.init) and run
+
+```sh
+just --justfile=Justfile.init init-project <project-name>
+```
+
+to create a project `<project-name>` under `$HOME/development/project`.
+
+Then `cd` to `$HOME/development/project<project-name>` and run
+
+```sh
+just init-project
+```
 
 ## Development Layout
 
@@ -59,15 +73,9 @@ just -f <path to Justfile.init> init-bluesky <project-name> <project-language>
 
 If not specified the default language is 'python'.
 
-Use the following to download the Justfiles to the current directory
+## `Justfile.main`
 
-```sh
-just -f <path to Justfile.init> init-just
-```
-
-## `Justfile`
-
-Main recipes for project management
+Main recipes for project management. Linked to `Justfile`
 
 Running `just` will display a list of the recipes.
 
@@ -87,12 +95,15 @@ Running `just` will display a list of the recipes.
 
 `add-dev` - Add distributions for development tasks
 
-`init` - Initializes a new project using `pdm`,
+`init-project` - Initializes a new project using `pdm`,
 adds the required development packages
 and creates a set of documentation files.
 Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `init-docs`
 
-`init-venv` - Intializes a virtual environment as configures the project manager `pdm` to use it
+`init-venv-python` - Intializes a virtual environment using the current version of python.
+
+`init-venv-pyproject` - Intializes a virtual environment using the version of python defined in
+`pyproject.toml`.
 
 `lint` - Runs the `ruff` linter
 

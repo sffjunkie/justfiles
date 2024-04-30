@@ -7,18 +7,20 @@ just_branch := env_var_or_default('JUSTFILES_BRANCH', 'main')
 home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 
+[private]
 default:
     @just --list --unsorted --justfile {{justfile()}}
 
 [no-cd]
-init-project name language='python': (_init-base name "project" language) init-just
+init-project name language='python': (_init-base name "project" language) (init-just name "project")
 
 [no-cd]
-init-bluesky name language='python': (_init-base name "bluesky" language) init-just
+init-bluesky name language='python': (_init-base name "bluesky" language) (init-just name "bluesky")
 
 [no-cd]
 _init-base name stage language:
     #!/bin/sh
+    echo "Initializing project {{name}}"
     if [ ! -d "{{dev_home}}/{{stage}}/{{name}}" ]; then
         mkdir -p "{{dev_home}}/{{stage}}/{{name}}"
         echo "PROJECT_NAME={{name}}" > {{dev_home}}/{{stage}}/{{name}}/.project
@@ -30,12 +32,13 @@ _init-base name stage language:
 
 
 [no-cd]
-init-just:
+init-just name stage:
     #!/bin/sh
-    if [ ! -f ./.project ]; then
-        echo "Not in a managed project"
+    if [ ! -f {{dev_home}}/{{stage}}/{{name}}/.project ]; then
+        echo "Not a managed project"
         exit 1
     fi
+    cd {{dev_home}}/{{stage}}/{{name}}
     
     if [ ! -d ./just ]; then
         echo "Retrieving branch '{{just_branch}}' from '{{just_repo}}'"
