@@ -11,7 +11,7 @@ python-info:
     print(f"python platform: {sys.platform}")
     print("python path:")
     for path in sys.path:
-        print(f"                 {sys.path}")
+        print(f"                 {path}")
 
 
 # Build the project
