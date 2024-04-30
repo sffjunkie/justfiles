@@ -107,7 +107,13 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 
 `lint` - Runs the `ruff` linter
 
+`python-info` - Displays information about the python being used.
+
 `repl` - Opens a Python REPL
+
+`run` - Runs a Python one-liner
+
+`run-module` - Runs the project's module
 
 `test` - Uses `tox` to run the unit and integration tests
 
