@@ -1,9 +1,11 @@
 import 'just/just/update.just'
 import 'just/python/python.just'
 
+default_project_name := `basename $(realpath $(dirname Justfile))`
+
 set dotenv-filename := ".project"
 
-project_name := env_var("PROJECT_NAME")
+project_name := env_var_or_default("PROJECT_NAME", default_project_name)
 project_language := env_var_or_default("PROJECT_LANGUAGE", "python")
 
 home_dir := env_var('HOME')
