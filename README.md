@@ -35,9 +35,10 @@ venv
 The current project layout is as follows
 
 ```text
+pyproject.toml
 src
     <project name>
-    docs - source files for the documentation
+    docs - Source files for the documentation
 tests
 docs - Built documentation
 ```
