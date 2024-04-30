@@ -76,14 +76,6 @@ Running `just` will display a list of the recipes.
 
 ### Python
 
-For Python projects I'm currently using the following tools
-
-- [pdm](https://pdm-project.org/en/latest/)  - https://github.com/pdm-project/pdm
-- [pytest](https://docs.pytest.org/) - https://github.com/pytest-dev/pytest
-- [ruff](https://docs.astral.sh/ruff/) - https://github.com/astral-sh/ruff
-- [mypy](https://mypy.readthedocs.io/en/stable/) - https://github.com/python/mypy
-- [sphinx](https://www.sphinx-doc.org/en/master/) - https://github.com/sphinx-doc/sphinx
-
 #### Python Recipes
 
 `build` - Uses `pdm` to build the distribution files
@@ -116,3 +108,23 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 `test-integration` - Runs integration tests using `pytest`
 
 `test-types` - Uses `mypy` to perform type checking
+
+#### Python Tools
+
+For Python projects I'm currently using the following tools
+
+- pdm
+  - [docs](https://pdm-project.org/en/latest/)
+  - [Github](https://github.com/pdm-project/pdm)
+- pytest
+  - [docs](https://docs.pytest.org/)
+  - [Github](https://github.com/pytest-dev/pytest)
+- ruff
+  - [docs](https://docs.astral.sh/ruff/)
+  - [Github](https://github.com/astral-sh/ruff)
+- mypy
+  - [docs](https://mypy.readthedocs.io/en/stable/)
+  - [Github](https://github.com/python/mypy)
+- sphinx
+  - [docs](https://www.sphinx-doc.org/en/master/)
+  - [Github](https://github.com/sphinx-doc/sphinx)
