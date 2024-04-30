@@ -4,7 +4,7 @@ pypm_add := 'pdm add'
 pypm_add_dev := 'pdm add -dG dev'
 
 python-info:
-    #!/usr/bin/env -S 'pdm run python'
+    #!/usr/bin/env -S pdm run python
     import sys
     print(f"python prefix:   {sys.prefix}")
     print(f"python version:  {sys.version}")
