@@ -6,7 +6,7 @@ import 'type-checker.just'
 import 'virtualenv.just'
 
 default_python_version := '3.11'
-pkg_src_dir := './src' + project_name
+pkg_src_dir := './src/' + project_name
 docs_src_dir := './src/docs'
 docs_build_dir := './docs'
 tests_dir := './tests'
