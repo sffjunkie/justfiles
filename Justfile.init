@@ -2,7 +2,7 @@ dotenv_filename := ".project"
 set dotenv-filename := "{{dotenv_filename}}"
 
 default_language := 'python'
-default_stage := 'project'  # or 'bluesky'
+default_stage := 'bluesky'  # or 'project'
 
 just_repo := 'https://github.com/sffjunkie/justfiles'
 just_branch := env_var_or_default('JUSTFILES_BRANCH', 'main')
