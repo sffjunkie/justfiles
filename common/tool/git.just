@@ -11,3 +11,9 @@ vcs-merge from-branch:
         exit 0
     fi
     git merge {{merge-style}} {{from-branch}}
+
+alias git-undo-commit := vcs-undo-commit
+
+# Undo the last commit
+vcs-undo-commit:
+    git reset --hard HEAD~1
