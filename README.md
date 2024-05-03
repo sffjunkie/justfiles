@@ -135,18 +135,9 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 
 For Python projects I'm currently using the following tools
 
-- pdm
-  - [docs](https://pdm-project.org/en/latest/)
-  - [Github](https://github.com/pdm-project/pdm)
-- pytest
-  - [docs](https://docs.pytest.org/)
-  - [Github](https://github.com/pytest-dev/pytest)
-- ruff
-  - [docs](https://docs.astral.sh/ruff/)
-  - [Github](https://github.com/astral-sh/ruff)
-- mypy
-  - [docs](https://mypy.readthedocs.io/en/stable/)
-  - [Github](https://github.com/python/mypy)
-- sphinx
-  - [docs](https://www.sphinx-doc.org/en/master/)
-  - [Github](https://github.com/sphinx-doc/sphinx)
+- pdm - [Github](https://github.com/pdm-project/pdm), [docs](https://pdm-project.org/en/latest/)
+- pytest - [Github](https://github.com/pytest-dev/pytest), [docs](https://docs.pytest.org/)
+- pytest-dotenv - [Github](https://github.com/theskumar/python-dotenv)
+- ruff - [Github](https://github.com/astral-sh/ruff), [docs](https://docs.astral.sh/ruff/)
+- mypy - [Github](https://github.com/python/mypy), [docs](https://mypy.readthedocs.io/en/stable/)
+- sphinx - [Github](https://github.com/sphinx-doc/sphinx), [docs](https://www.sphinx-doc.org/en/master/)
