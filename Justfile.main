@@ -1,3 +1,4 @@
+import 'just/common/vcs.just'
 import 'just/just/update.just'
 import 'just/python/python.just'
 
