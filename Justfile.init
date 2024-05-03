@@ -1,5 +1,5 @@
 dotenv_filename := ".project"
-set dotenv-filename := dotenv_filename
+set dotenv-filename := "{{dotenv_filename}}"
 
 default_language := 'python'
 default_stage := 'project'  # or 'bluesky'
