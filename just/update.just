@@ -1,5 +1,5 @@
 # Update the just files from the repository
-update-just:
+just-update:
     git -C ./just pull
 
 # Switch to the 'main' branch
