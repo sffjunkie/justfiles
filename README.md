@@ -81,7 +81,11 @@ Running `just` will display a list of the recipes.
 
 ### Justfile
 
-`update-just` - Updates the local Justfiles from Github
+`just-update` - Updates the local Justfiles from Github
+
+`just-develop` - Switch to the `develop` branch
+
+`just-main` - Switch to the `main` branch
 
 ### Python
 
