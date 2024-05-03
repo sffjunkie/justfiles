@@ -42,12 +42,12 @@ run-module *args:
 [private]
 init-pyproject:
     #!/bin/sh
-    if grep -q "PYTHON_VERSION=" .project; then
-        py_ver=$(sed -nE "s/^PYTHON_VERSION=([0-9]+(\.[0-9]+(\.[0-9]+)?)?)/\1/p" .project)
+    if grep -q "PYTHON_VERSION=" {{dotenv-filename}}; then
+        py_ver=$(sed -nE "s/^PYTHON_VERSION=([0-9]+(\.[0-9]+(\.[0-9]+)?)?)/\1/p" {{dotenv-filename}})
         venv_python={{venv_home}}/{{project_name}}/$py_ver/bin/python
         [ -f pyproject.toml ] && echo "Project already initialised" || pdm init --python=$venv_python
     else
-        echo "Python version not set in .project. Run init-venv-python recipe first"
+        echo "Python version not set in {{dotenv-filename}}. Run init-venv-python recipe first"
     fi
 
 # Initialize development packages

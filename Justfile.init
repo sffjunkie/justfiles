@@ -1,3 +1,4 @@
+set dotenv-filename := ".project"
 default_language := 'python'
 default_stage := 'project'  # or 'bluesky'
 
@@ -23,8 +24,8 @@ _init-base name stage language:
     echo "Initializing project {{name}}"
     if [ ! -d "{{dev_home}}/{{stage}}/{{name}}" ]; then
         mkdir -p "{{dev_home}}/{{stage}}/{{name}}"
-        echo "PROJECT_NAME={{name}}" > {{dev_home}}/{{stage}}/{{name}}/.project
-        echo "PROJECT_LANGUAGE={{language}}" >> {{dev_home}}/{{stage}}/{{name}}/.project
+        echo "PROJECT_NAME={{name}}" > {{dev_home}}/{{stage}}/{{name}}/{{dotenv-filename}}
+        echo "PROJECT_LANGUAGE={{language}}" >> {{dev_home}}/{{stage}}/{{name}}/{{dotenv-filename}}
     else
         echo "Project {{name}} already exists"
     fi
