@@ -3,7 +3,8 @@ import 'just/python/python.just'
 
 default_project_name := `basename $(realpath $(dirname Justfile))`
 
-set dotenv-filename := ".project"
+dotenv_filename := ".project"
+set dotenv-filename := dotenv_filename
 
 project_name := env_var_or_default("PROJECT_NAME", default_project_name)
 project_language := env_var_or_default("PROJECT_LANGUAGE", "python")

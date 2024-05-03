@@ -7,11 +7,11 @@ init-venv-python:
     mkdir -p $venv_dir
     python -m venv $venv_dir/$py_ver
 
-    grep -q "PYTHON_VERSION=" {{dotenv-filename}}
+    grep -q "PYTHON_VERSION=" {{dotenv_filename}}
     if [ $? -eq 0 ]; then
-        sed -Ei "s/^PYTHON_VERSION=[0-9]+(\.[0-9]+(\.[0-9]+)?)?/PYTHON_VERSION=$py_ver/" {{dotenv-filename}}
+        sed -Ei "s/^PYTHON_VERSION=[0-9]+(\.[0-9]+(\.[0-9]+)?)?/PYTHON_VERSION=$py_ver/" {{dotenv_filename}}
     else
-        echo "PYTHON_VERSION=$py_ver" >> {{dotenv-filename}}
+        echo "PYTHON_VERSION=$py_ver" >> {{dotenv_filename}}
     fi
     echo "Initialized venv in $venv_dir/$py_ver"
 
