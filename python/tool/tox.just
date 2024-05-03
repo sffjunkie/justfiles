@@ -18,6 +18,7 @@ test-coverage:
 # Generate test coverage HTML report
 test-coverage-html:
     {{pypm_run}} coverage html -d {{cache_dir}}/htmlcov/
+    echo "Opening report in browser"
     @xdg-open "{{cache_dir}}/htmlcov/index.html" 2>&1 >/dev/null
 
 # Show test coverage in the terminal
