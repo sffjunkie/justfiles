@@ -1,7 +1,8 @@
 import 'just/just/update.just'
 import 'just/python/python.just'
 
-default_project_name := `basename $(realpath $(dirname Justfile))`
+justfile := justfile()
+default_project_name := `basename $(realpath $(dirname {{justfile}}))`
 
 dotenv_filename := ".project"
 set dotenv-filename := "{{dotenv_filename}}"
