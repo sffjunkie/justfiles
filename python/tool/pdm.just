@@ -15,8 +15,12 @@ python-info:
         print(f"                 {path}")
 
 # Build the project
-build:
-	pdm build
+build *args:
+	pdm build {{args}}
+
+# Update the project dependencies
+update *args:
+	pdm update {{args}}
 
 # Add distribution
 add +names:
