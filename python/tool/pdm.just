@@ -32,11 +32,11 @@ add-dev +names:
 
 # Run python code 
 run *args:
-    pdm run dotenv run python -c '{{args}}'
+    pdm run dotenv run -- python -c '{{args}}'
 
 # Run the project's module
 run-module *args:
-    pdm run dotenv run python -m {{project_name}} {{args}}
+    pdm run dotenv run -- python -m {{project_name}} {{args}}
 
 # Create a pyproject.toml 
 [private]
