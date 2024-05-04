@@ -43,8 +43,6 @@ test-coverage-html: coverage-test-coverage-html
 # Show test coverage in the terminal
 test-coverage-term: coverage-test-coverage-term
 
-test-docs: tox-test-docs
-
 # Run a python repl
 [no-cd]
 repl:
