@@ -1,12 +1,12 @@
 # Run unit tests with tox
 [private]
 tox-test-unit:
-    {{pypm_run}} dotenv run -- tox -k unit --suppress-no-test-exit-code
+    {{pypm_run}} dotenv run -- tox -- -k unit --suppress-no-test-exit-code
 
 # Run integration tests with tox
 [private]
 tox-test-integration:
-    {{pypm_run}} dotenv run -- tox -k integration --suppress-no-test-exit-code
+    {{pypm_run}} dotenv run -- tox -- -k integration --suppress-no-test-exit-code
 
 # Ron tox to test documentation generation
 [private]
