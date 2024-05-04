@@ -1,4 +1,4 @@
-# import 'tool/coverage.just'
+import 'tool/coverage.just'
 import 'tool/pytest.just'
 import 'tool/tox.just'
 

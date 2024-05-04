@@ -1,13 +1,16 @@
 export COVERAGE_FILE := cache_dir + '/coverage'
 # Generate test coverage metrics
-test-coverage:
+[private]
+coverage-test-coverage:
     {{pypm_run}} pytest -o cache_dir={{cache_dir}}/pytest --cov=src/{{project_name}} {{tests_dir}}
 
 # Generate test coverage HTML report
-test-coverage-html:
+[private]
+coverage-test-coverage-html:
     {{pypm_run}} coverage html -d {{cache_dir}}/htmlcov/
     @xdg-open "{{cache_dir}}/htmlcov/index.html" 2>&1 >/dev/null
 
 # Show test coverage in the terminal
-test-coverage-term:
+[private]
+coverage-test-coverage-term:
     {{pypm_run}} coverage report

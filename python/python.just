@@ -25,6 +25,17 @@ test-unit: pytest-test-unit
 # Run integration tests
 test-integration: pytest-test-integration
 
+# Generate test coverage metrics
+test-coverage: coverage-test-coverage
+
+# Generate test coverage HTML report
+test-coverage-html: coverage-test-coverage-html
+
+# Show test coverage in the terminal
+test-coverage-term: coverage-test-coverage-term
+
+test-docs: tox-test-docs
+
 # Run a python repl
 [no-cd]
 repl:
