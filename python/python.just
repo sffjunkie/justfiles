@@ -16,6 +16,15 @@ tests_dir := './tests/'
 
 test_tools := 'coverage mypy pytest pytest-cov pytest-custom_exit_code pytest-dotenv tox'
 
+# Initialize docs
+init-docs: sphinx-init-docs
+
+# Build docs
+build-docs: sphinx-build-docs
+
+# Test doc building
+test-docs: sphinx-test-docs
+
 # Initialize python project with a venv, project manager, pyproject.toml, dev packages and docs
 init-project: init-venv-python init-pyproject init-dev-pkgs init-docs
 

@@ -2,7 +2,7 @@ doc_tools := 'sphinx'
 
 # Initialize docs directory with Sphinx
 [private]
-init-docs:
+sphinx-init-docs:
     #!/bin/sh
     if [ -f src/docs/conf.py ]; then
         echo "Docs already initialised"
@@ -21,5 +21,11 @@ init-docs:
     fi
 
 # Build docs with Sphinx
-build-docs:
+[private]
+sphinx-build-docs:
     {{pypm_run}} sphinx-build --builder html {{docs_src_dir}} {{docs_build_dir}}
+
+# Test doc building with Sphinx
+[private]
+sphinx-test-docs:
+    {{pypm_run}} sphinx-build --fail-on-warning --builder html {{docs_src_dir}} {{docs_build_dir}}
