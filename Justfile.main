@@ -1,4 +1,4 @@
-import 'just/common/vcs.just'
+import 'just/common/common.just'
 import 'just/just/update.just'
 import 'just/nix/nix.just'
 import 'just/python/python.just'
