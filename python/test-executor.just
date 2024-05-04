@@ -1,5 +1,5 @@
 # import 'tool/coverage.just'
-# import 'tool/pytest.just'
+import 'tool/pytest.just'
 import 'tool/tox.just'
 
 # Run type, unit, integration, and documentation tests
