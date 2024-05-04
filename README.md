@@ -91,23 +91,25 @@ Running `just` will display a list of the recipes.
 
 #### Python Recipes
 
+`add` - Add distributions to the project
+
+`add-dev` - Add distributions for development tasks
+
 `build` - Uses `pdm` to build the distribution files
 
 `build-docs` - Builds the documentation using Sphinx
 
-`add` - Add distributions to the project
-
-`add-dev` - Add distributions for development tasks
+`init-pre-commit` - Initialize pre-commit tool
 
 `init-project` - Initializes a new project using `pdm`,
 adds the required development packages
 and creates a set of documentation files.
 Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `init-docs`
 
-`init-venv-python` - Intializes a virtual environment using the current version of python.
-
 `init-venv-pyproject` - Intializes a virtual environment using the version of python defined in
 `pyproject.toml`.
+
+`init-venv-python` - Intializes a virtual environment using the current version of python.
 
 `lint` - Runs the `ruff` linter
 
@@ -125,15 +127,15 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 
 `test-coverage-html` - Creates the test coverage report in HTML and opens it in a browser.
 
-`test-coverage-text` - Creates the test coverage report and displays it in the terminal.
+`test-coverage-term` - Creates the test coverage report and displays it in the terminal.
 
 `test-docs` - Uses tox to test the documentation generation
-
-`test-unit` - Runs unit tests using `pytest`
 
 `test-integration` - Runs integration tests using `pytest`
 
 `test-types` - Uses `mypy` to perform type checking
+
+`test-unit` - Runs unit tests using `pytest`
 
 #### Python Tools
 
@@ -145,3 +147,4 @@ For Python projects I'm currently using the following tools
 - ruff - [Github](https://github.com/astral-sh/ruff), [docs](https://docs.astral.sh/ruff/)
 - mypy - [Github](https://github.com/python/mypy), [docs](https://mypy.readthedocs.io/en/stable/)
 - sphinx - [Github](https://github.com/sphinx-doc/sphinx), [docs](https://www.sphinx-doc.org/en/master/)
+- pre-commit - [Github](https://github.com/pre-commit/pre-commit), [docs](https://pre-commit.com/)
