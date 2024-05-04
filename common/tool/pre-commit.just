@@ -7,13 +7,13 @@ init-pre-commit:
         exit 1
     fi
 
+    if [ -f ./.git/hooks/pre-commit ]; then
+        echo "pre-commit script already installed"
+        exit 1
+    fi
+
     if [ ! -f ./.pre-commit-config.yaml ]; then
         cp just/common/tool/.pre-commit-config.yaml .
     fi
 
-    if [ -f ./.git/hooks/pre-commit ]; then
-        grep "pre-commit" ./.git/hooks/pre-commit 2>&1 >/dev/null
-        if [ $? -eq 0 ]; then
-            pre-commit --install
-        fi
-    fi
+    pre-commit install
