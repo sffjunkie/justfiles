@@ -3,6 +3,8 @@ import 'just/just/update.just'
 import 'just/nix/nix.just'
 import 'just/python/python.just'
 
+set allow-duplicate-recipes := true
+
 justfile := justfile()
 default_project_name := `basename $(realpath $(dirname {{justfile}}))`
 
@@ -16,6 +18,8 @@ home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 project_home := env_var_or_default("DEVELOPMENT_PROJECT_HOME", dev_home + "/project")
 cache_dir := dev_home + '/cache/' + project_name
+
+import? 'Justfile.override'
 
 [private]
 default:
