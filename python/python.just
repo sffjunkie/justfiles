@@ -19,6 +19,12 @@ test_tools := 'coverage mypy pytest pytest-cov pytest-dotenv tox'
 # Initialize python project with a venv, project manager, pyproject.toml, dev packages and docs
 init-project: init-venv-python init-pyproject init-dev-pkgs init-docs
 
+# Run unit tests
+test-unit: tox-test-unit
+
+# Run integration tests
+test-integration: tox-test-integration
+
 # Run a python repl
 [no-cd]
 repl:
