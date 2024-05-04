@@ -4,7 +4,7 @@ nix-shell +pkgs:
     echo "Starting shell with {{pkgs}}"
 
     echo "{{pkgs}}" | grep " "
-    if [ $? -eq 0 ]
+    if [ $? -eq 0 ]; then
         pkg_list=$(echo "{{pkgs}}" | sed -E 's/ /,/g')
         eval nix shell nixpkgs#{$pkg_list}
     else
