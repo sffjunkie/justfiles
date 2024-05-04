@@ -3,7 +3,7 @@ nix-shell +pkgs:
     #!/bin/sh
     echo "Starting shell with {{pkgs}}"
 
-    echo "{{pkgs}}" | grep " "
+    echo "{{pkgs}}" | grep " " 2>&1 >/dev/null
     if [ $? -eq 0 ]; then
         pkg_list=$(echo "{{pkgs}}" | sed -E 's/ /,/g')
         eval nix shell nixpkgs#{$pkg_list}
