@@ -16,4 +16,4 @@ init-pre-commit:
         cp just/common/tool/.pre-commit-config.yaml .
     fi
 
-    pre-commit install
+    pre-commit install --install-hooks
