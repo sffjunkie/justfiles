@@ -20,10 +20,10 @@ test_tools := 'coverage mypy pytest pytest-cov pytest-dotenv tox'
 init-project: init-venv-python init-pyproject init-dev-pkgs init-docs
 
 # Run unit tests
-test-unit: tox-test-unit
+test-unit: pytest-test-unit
 
 # Run integration tests
-test-integration: tox-test-integration
+test-integration: pytest-test-integration
 
 # Run a python repl
 [no-cd]
