@@ -3,27 +3,12 @@ no_tests_collected := '5'
 # Run unit tests with tox
 [private]
 tox-test-unit:
-    #!/bin/sh
     {{pypm_run}} dotenv run -- pytest -k unit --suppress-no-test-exit-code
-    rc=$?
-    if [ $rc -eq {{no_tests_collected}} ]; then
-        exit 0
-    else
-        exit $rc
-    fi
 
 # Run integration tests with tox
 [private]
 tox-test-integration:
-    #!/bin/sh
-    no_tests_collected=5
     {{pypm_run}} dotenv run -- pytest -k integration --suppress-no-test-exit-code
-    rc=$?
-    if [ $rc -eq {{no_tests_collected}} ]; then
-        exit 0
-    else
-        exit $rc
-    fi
 
 # Ron tox to test documentation generation
 test-docs:
