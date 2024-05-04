@@ -28,4 +28,9 @@ sphinx-build-docs:
 # Test doc building with Sphinx
 [private]
 sphinx-test-docs:
-    {{pypm_run}} sphinx-build --fail-on-warning --builder html {{docs_src_dir}} {{docs_build_dir}}
+    #!/bin/sh
+    out_dir=$(mktemp -d)
+    {{pypm_run}} sphinx-build --fail-on-warning --builder html {{docs_src_dir}} $out_dir
+    rc=$?
+    rm -rf $out_dir
+    exit $rc
