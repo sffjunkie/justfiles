@@ -7,3 +7,7 @@ pytest-test-unit:
 [private]
 pytest-test-integration:
     {{pypm_run}} dotenv run -- pytest -k integration --suppress-no-test-exit-code
+
+[private]
+pytest-test:
+    {{pypm_run}} dotenv run -- pytest --suppress-no-test-exit-code

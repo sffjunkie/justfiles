@@ -12,3 +12,7 @@ tox-test-integration:
 [private]
 tox-test-docs:
     {{pypm_run}} tox --workdir {{cache_dir}}/tox -e doc
+
+[private]
+tox-test:
+    {{pypm_run}} dotenv run -- tox -- --suppress-no-test-exit-code
