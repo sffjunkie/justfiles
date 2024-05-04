@@ -1,4 +1,4 @@
-no_tests_collected := 5
+no_tests_collected := '5'
 
 # Run unit tests with tox
 [private]
