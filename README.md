@@ -113,6 +113,10 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 
 `lint` - Runs the `ruff` linter
 
+`profile-module` - Runs the module with `pyinstrument`
+
+`profile-script` - Runs a script with `pyinstrument`
+
 `python-info` - Displays information about the python being used.
 
 `repl` - Opens a Python REPL
@@ -150,3 +154,4 @@ For Python projects I'm currently using the following tools
 - mypy - [Github](https://github.com/python/mypy), [docs](https://mypy.readthedocs.io/en/stable/)
 - sphinx - [Github](https://github.com/sphinx-doc/sphinx), [docs](https://www.sphinx-doc.org/en/master/)
 - pre-commit - [Github](https://github.com/pre-commit/pre-commit), [docs](https://pre-commit.com/)
+- pyinstrument - [Github](https://github.com/joerick/pyinstrument), [docs](https://pyinstrument.readthedocs.io/en/latest/home.html)
