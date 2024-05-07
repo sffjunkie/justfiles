@@ -121,6 +121,8 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 
 `run-module` - Runs the project's module
 
+`set-venv-pyproject` - Set pdm's venv based on the python version in `pyproject.toml`
+
 `test` - Uses `tox` to run the unit and integration tests
 
 `test-coverage` - Generates test coverage metrics
