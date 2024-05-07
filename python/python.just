@@ -48,7 +48,7 @@ test-coverage-term: coverage-test-coverage-term
 profile-module *args: (pyinstrument-profile-module args)
 
 # Profile a python script
-profile-script script *args: (pyinstrument-profile script args)
+profile-script script *args: (pyinstrument-profile-script script args)
 
 # Run a python repl
 [no-cd]
