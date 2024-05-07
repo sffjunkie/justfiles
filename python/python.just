@@ -1,5 +1,6 @@
 import 'docs.just'
 import 'linter.just'
+import 'profiler.just'
 import 'project-manager.just'
 import 'test-executor.just'
 import 'type-checker.just'
@@ -14,7 +15,7 @@ docs_src_dir := './src/docs/'
 docs_build_dir := './docs/'
 tests_dir := './tests/'
 
-test_tools := 'coverage mypy pytest pytest-cov pytest-custom_exit_code pytest-dotenv tox'
+test_tools := 'coverage mypy pyinstrument pytest pytest-cov pytest-custom_exit_code pytest-dotenv tox'
 
 # Initialize python project with a venv, project manager, pyproject.toml, dev packages and docs
 init-project: init-venv-python init-pyproject init-dev-pkgs init-docs
@@ -42,6 +43,10 @@ test-coverage-html: coverage-test-coverage-html
 
 # Show test coverage in the terminal
 test-coverage-term: coverage-test-coverage-term
+
+profile-module *args: (pyinstrument-profile-module {{args}})
+
+profile-script script *args: (pyinstrument-profile-module {{script}} {{args}})
 
 # Run a python repl
 [no-cd]
