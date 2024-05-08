@@ -14,14 +14,13 @@ dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 default:
     @just --list --unsorted --justfile {{justfile()}}
 
+# Initialize a project directory
 [no-cd]
-init-project name language='python': (_init-base name "project" language) (init-just name "project")
+init stage name language='python': (_init-dir stage name language) (init-just stage name)
 
 [no-cd]
-init-bluesky name language='python': (_init-base name "bluesky" language) (init-just name "bluesky")
-
-[no-cd]
-_init-base name stage language:
+[private]
+_init-dir stage name language:
     #!/bin/sh
     echo "Initializing project {{name}}"
     if [ ! -d "{{dev_home}}/{{stage}}/{{name}}" ]; then
@@ -35,7 +34,8 @@ _init-base name stage language:
 
 
 [no-cd]
-init-just name="" stage="":
+[private]
+init-just stage="" name="":
     #!/bin/sh
     if [ "{{name}}" != "" ] && [ "{{stage}}" != "" ]; then
         cd {{dev_home}}/{{stage}}/{{name}}

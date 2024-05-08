@@ -12,14 +12,18 @@ I currently categorize projects into 2 stages
 There are 2 main Justfiles
 
 1. `Justfile.init`
-   - Initializes a new project with `init-project` and `init-bluesky` recipes. Can be run from any directory.
-   - Both also retrieve the main Justfiles from Github.
-2. `Justfile` - The main entry point for project management. Includes the other Justfiles.
+   - Initializes a new project with the `init` recipe
+     - Can be run from any directory.
+     - Retrieves the main Justfiles from Github.
+2. `Justfile`
+   - The main entry point for project management
+   - Includes the other Justfiles.
+   - Linked from `Justfile.main` in the `just directory`
 
 Download [Justfile.init](https://raw.githubusercontent.com/sffjunkie/justfiles/main/Justfile.init) and run
 
 ```sh
-just --justfile=Justfile.init init-project <project-name>
+just --justfile=Justfile.init init project <project-name>
 ```
 
 to create a project `<project-name>` under `$HOME/development/project`.
@@ -62,16 +66,16 @@ docs - Built documentation
 Use the following to create a new project
 
 ```sh
-just -f <path to Justfile.init> init-project <project-name> <project-language>
+just -f <path to Justfile.init> init project <project-name> <project-language>
 ```
 
 or
 
 ```sh
-just -f <path to Justfile.init> init-bluesky <project-name> <project-language>
+just -f <path to Justfile.init> init bluesky <project-name> <project-language>
 ```
 
-If not specified the default language is 'python'.
+Currently the only language is 'python'.
 
 ## `Justfile.main`
 
