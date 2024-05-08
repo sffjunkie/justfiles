@@ -31,7 +31,7 @@ to create a project `<project-name>` under `$HOME/development/project`.
 Then `cd` to `$HOME/development/project/<project-name>` and run
 
 ```sh
-just init-project
+just init-devenv
 ```
 
 ## Development Layout
@@ -105,7 +105,7 @@ Running `just` will display a list of the recipes.
 
 `init-pre-commit` - Initialize pre-commit tool
 
-`init-project` - Initializes a new project using `pdm`,
+`init-devenv` - Initializes a new project using `pdm`,
 adds the required development packages
 and creates a set of documentation files.
 Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `init-docs`
