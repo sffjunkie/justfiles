@@ -13,7 +13,7 @@ There are 2 main Justfiles
 2. `Justfile`
    - The main entry point for project management
    - Includes the other Justfiles.
-   - Linked from `Justfile.main` in the `just directory`
+   - Linked from `Justfile.main` in the `just` directory
 
 Download [Justfile.init](https://raw.githubusercontent.com/sffjunkie/justfiles/main/Justfile.init) and run
 
