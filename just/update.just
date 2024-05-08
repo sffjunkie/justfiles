@@ -2,7 +2,7 @@
 just-update:
     git -C ./just pull
 
-# Switch to the 'main' branch
+# Switch justfiles to the 'main' branch
 just-main:
     #!/bin/sh
     cd just
@@ -10,7 +10,7 @@ just-main:
     git pull
     cd ..
 
-# Switch to the 'develop' branch
+# Switch justfiles to the 'develop' branch
 just-develop:
     #!/bin/sh
     cd just
