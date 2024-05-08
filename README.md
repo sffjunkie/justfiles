@@ -4,11 +4,6 @@ A set of [Justfiles](https://github.com/casey/just) for my development tasks.
 
 Currently only targets Python projects.
 
-I currently categorize projects into 2 stages
-
-1. bluesky - Where I create projects I'm tinkering with that haven't been released to the world
-2. project - Projects that are released on Github
-
 There are 2 main Justfiles
 
 1. `Justfile.init`
@@ -39,9 +34,7 @@ just init-devenv
 Development related files are stored in `$HOME/development` with the folowing structure
 
 ```text
-project
-    <project-name>
-bluesky
+<project-stage>
     <project-name>
 venv
     <project-name>
