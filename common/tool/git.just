@@ -5,6 +5,10 @@ merge-style := "--ff"
 git-merge-from branch:
     #!/bin/sh
     current_branch=$(git rev-parse --abbrev-ref HEAD)
+    if [ ! $(git for-each-ref --format='%(refname)' refs/heads/ | grep {{branch}}) ]; then
+        echo "Branch {{branch}} does not exist"
+        exit 1
+    fi
     if [ "{{branch}}" == "$current_branch" ]; then
         echo "Already in branch {{branch}} - no merging necessary"
         exit 0
