@@ -1,6 +1,7 @@
 import 'just/common/common.just'
 import 'just/just/update.just'
 import 'just/nix/nix.just'
+import 'just/project/info.just'
 import 'just/python/python.just'
 
 set allow-duplicate-recipes := true
