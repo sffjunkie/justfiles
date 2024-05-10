@@ -47,6 +47,7 @@ run-module *args:
 init-pyproject:
     #!/bin/sh
     if grep -q "PYTHON_VERSION=" {{dotenv_filename}}; then
+        touch .env
         py_ver=$(sed -nE "s/^PYTHON_VERSION=([0-9]+(\.[0-9]+(\.[0-9]+)?)?)/\1/p" {{dotenv_filename}})
         venv_python={{venv_home}}/{{project_name}}/$py_ver/bin/python
         [ -f pyproject.toml ] && echo "Project already initialised" || pdm init --python=$venv_python
