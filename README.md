@@ -114,6 +114,8 @@ Works by running the following recipes `init-pyproject`, `init-dev-pkgs`, and `i
 
 `profile-script` - Runs a script with `pyinstrument`
 
+`project-info` - Displays project information.
+
 `python-info` - Displays information about the python being used.
 
 `repl` - Opens a Python REPL
