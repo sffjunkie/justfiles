@@ -12,7 +12,7 @@ default_project_name := `basename $(realpath $(dirname {{justfile}}))`
 dotenv_filename := ".project"
 set dotenv-filename := ".project"
 
-project_name := env_var("PROJECT_NAME")
+project_name := env_var_or_default("PROJECT_NAME", default_project_name)
 project_language := env_var_or_default("PROJECT_LANGUAGE", "python")
 
 home_dir := env_var('HOME')
