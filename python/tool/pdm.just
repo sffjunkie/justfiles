@@ -26,13 +26,13 @@ update *args:
 add +names:
     #!/bin/sh
     [ ! -f pyproject.toml ] && echo "The pyproject.toml has not been initialized yet. You can do this by running \`just init-devenv\`" && exit 1
-    pdm add {{names}}
+    pdm add {{quote(names)}}
 
 # Add distribution for development
 add-dev +names:
     #!/bin/sh
     [ ! -f pyproject.toml ] && echo "The pyproject.toml has not been initialized yet. You can do this by running \`just init-devenv\`" && exit 1
-    pdm add -dG dev {{names}}
+    pdm add -dG dev {{quote(names)}}
 
 # Run python code 
 run *args:
