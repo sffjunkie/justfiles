@@ -5,7 +5,7 @@ doc_tools := 'sphinx'
 sphinx-init-docs:
     #!/bin/sh
     if [ -f src/docs/conf.py ]; then
-        echo "Docs already initialised"
+        echo -e "{{color_yellow}}Docs already initialised{{color_normal}}"
     else
         [ ! -d {{docs_src_dir}} ] && mkdir -p {{docs_src_dir}} || :
         user_name=$(git config user.name)

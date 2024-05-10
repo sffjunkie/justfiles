@@ -13,7 +13,7 @@ init-venv-python:
     else
         echo "PYTHON_VERSION=$py_ver" >> {{dotenv_filename}}
     fi
-    echo "Initialized venv in $venv_dir/$py_ver"
+    echo -e "{{color_green}}Initialized venv in $venv_dir/$py_ver{{color_normal}}"
 
 # Initialize a virtual environment using the version defined in pyproject.toml
 init-venv-pyproject:
@@ -22,4 +22,4 @@ init-venv-pyproject:
     mkdir -p $venv_dir
     py_ver=$(sed -nE 's/^requires-python = "[~>=]=(3\.[0-9]+)"$/\1/p' pyproject.toml)
     python -m venv $venv_dir/$py_ver
-    echo "Initialized venv in $venv_dir/$py_ver"
+    echo -e "{{color_green}}Initialized venv in $venv_dir/$py_ver{{color_normal}}"

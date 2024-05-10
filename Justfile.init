@@ -9,6 +9,17 @@ just_branch := env_var_or_default('JUSTFILES_BRANCH', 'main')
 home_dir := env_var('HOME')
 dev_home := env_var_or_default("DEVELOPMENT_HOME", home_dir + "/development")
 
+no_color := env_var_or_default("NO_COLOR", "")
+
+color_bold    := if no_color != "" { '' } else { '\\e[1m' }
+color_normal  := if no_color != "" { '' } else { '\\e[0m' }
+color_red     := if no_color != "" { '' } else { '\\e[31m' }
+color_green   := if no_color != "" { '' } else { '\\e[32m' }
+color_yellow  := if no_color != "" { '' } else { '\\e[33m' }
+color_blue    := if no_color != "" { '' } else { '\\e[34m' }
+color_magenta := if no_color != "" { '' } else { '\\e[35m' }
+color_grey    := if no_color != "" { '' } else { '\\e[90m' }
+
 [private]
 default:
     @just --list --unsorted --justfile {{justfile()}}
@@ -21,13 +32,13 @@ init stage name language='python': (_init-dir stage name language) (init-just st
 [private]
 _init-dir stage name language:
     #!/bin/sh
-    echo "Initializing project {{name}}"
+    echo -e "{{color_green}}Initializing {{stage}} {{name}}{{color_normal}}"
     if [ ! -d "{{dev_home}}/{{stage}}/{{name}}" ]; then
         mkdir -p "{{dev_home}}/{{stage}}/{{name}}"
         echo "PROJECT_NAME={{name}}" > {{dev_home}}/{{stage}}/{{name}}/{{dotenv_filename}}
         echo "PROJECT_LANGUAGE={{language}}" >> {{dev_home}}/{{stage}}/{{name}}/{{dotenv_filename}}
     else
-        echo "Project {{name}} already exists"
+        echo -e "{{color_red}}Project {{name}} already exists{{color_normal}}"
     fi
     cd "{{dev_home}}/{{stage}}/{{name}}"
 
@@ -41,7 +52,7 @@ init-just stage="" name="":
     fi
 
     if [ ! -d ./just ]; then
-        echo "Retrieving branch '{{just_branch}}' from '{{just_repo}}'"
+        echo -e "{{color_green}}Retrieving branch {{color_blue}}'{{just_branch}}' {{color_green}}from {{color_blue}}'{{just_repo}}'{{color_normal}}"
         git clone -b {{just_branch}} {{just_repo}} just
     fi
 

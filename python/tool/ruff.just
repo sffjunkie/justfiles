@@ -8,7 +8,7 @@ lint:
         prefix=""
     else
         if [ -f /etc/NIXOS ]; then
-            echo "You need to install the ruff nixos package on Nixos" 1>&2;
+            echo -e "{{color_red}}You need to install the ruff nixos package on Nixos{{color_normal}}" 1>&2;
             exit 1
         else
             prefix={{pypm_run}}
@@ -17,5 +17,5 @@ lint:
 
     ${prefix} ruff check --config "cache-dir = '{{cache_dir}}/ruff'" src/{{project_name}}
     if [ $? -eq 0 ]; then
-        echo "ruff: no problems found"
+        echo -e "{{color_green}}ruff: no problems found{{color_normal}}"
     fi
