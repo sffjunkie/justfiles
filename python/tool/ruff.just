@@ -3,7 +3,7 @@ lint_tools := 'ruff'
 # Lint the source
 lint:
     #!/bin/sh
-    command -v ruff &>/dev/null
+    command -v ruff 2>&1 &>/dev/null
     if [ $? -eq 0 ]; then
         prefix=""
     else
