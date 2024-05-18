@@ -23,3 +23,13 @@ git-merge-from branch:
 [private]
 git-undo-commit:
     git reset --hard HEAD~1
+
+
+[private, no-cd]
+git-init:
+    #!/bin/sh
+    if [ -d .git ]; then
+        echo "Git repository already initialized"
+    else
+        git init .
+    fi

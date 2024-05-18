@@ -8,3 +8,6 @@ vcs-merge-from branch: (git-merge-from branch)
 
 # Undo the last commit
 vcs-undo-commit: git-undo-commit
+
+# initialize a vcs repository
+vcs-init: git-init
