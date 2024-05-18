@@ -28,6 +28,12 @@ git-undo-commit:
 [private, no-cd]
 git-init:
     #!/bin/sh
+    command -v git 2>&1 >/dev/null
+    if [ $? -ne 0 ]; then
+        echo -e "{{color_red}}git needs to be installed{{color_normal}}"
+        exit 1
+    fi
+
     if [ -d .git ]; then
         echo "Git repository already initialized"
     else
