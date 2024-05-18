@@ -18,7 +18,7 @@ tests_dir := './tests/'
 test_tools := 'coverage mypy pyinstrument pytest pytest-cov pytest-custom_exit_code pytest-dotenv python-dotenv[cli] tox'
 
 # Initialize python project with a venv, project manager, pyproject.toml, dev packages and docs
-init-devenv: init-venv-python init-pyproject init-dev-pkgs init-docs vcs-init
+init-devenv: vcs-init init-venv-python init-pyproject init-dev-pkgs init-docs
 
 # Initialize docs
 init-docs: sphinx-init-docs
