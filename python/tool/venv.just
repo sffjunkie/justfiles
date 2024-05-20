@@ -23,3 +23,20 @@ init-venv-pyproject:
     py_ver=$(sed -nE 's/^requires-python = "[~>=]=(3\.[0-9]+)"$/\1/p' pyproject.toml)
     python -m venv $venv_dir/$py_ver
     echo -e "{{color_green}}Initialized venv in $venv_dir/$py_ver{{color_normal}}"
+
+venv-activate:
+    #!/bin/sh
+    venv_dir={{venv_home}}/{{project_name}}
+    grep -q "PYTHON_VERSION=" {{dotenv_filename}}
+    if [ $? -eq 0 ]; then
+        py_ver=$(sed -nE "s/^PYTHON_VERSION=([0-9]+(\.[0-9]+(\.[0-9]+)?)?)/\1/p" {{dotenv_filename}})
+    else
+        py_ver=$(find $venv_dir -maxdepth 1 -type d -name 3\* | head -n1)
+    fi
+    if [ -f $venv_dir/$py_ver/bin/activate ]; then
+        source $venv_dir/$py_ver/bin/activate
+    else
+        echo -e "{{color_red}}Activate script not found in $venv_dir/$py_ver{{color_normal}}"
+        exit 1
+    fi
+ 
