@@ -35,6 +35,7 @@ venv-activate:
     fi
     if [ -f $venv_dir/$py_ver/bin/activate ]; then
         echo "Run the following conmmand. It has been copied to the clipboard"
+        echo "source $venv_dir/$py_ver/bin/activate"
         echo "source $venv_dir/$py_ver/bin/activate" | {{clipboard}}
     else
         echo -e "{{color_red}}Activate script not found in $venv_dir/$py_ver{{color_normal}}"
