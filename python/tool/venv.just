@@ -34,9 +34,9 @@ venv-activate:
         py_ver=$(find $venv_dir -maxdepth 1 -type d -name 3\* | head -n1)
     fi
     if [ -f $venv_dir/$py_ver/bin/activate ]; then
-        source $venv_dir/$py_ver/bin/activate
+    echo "Run the following conmmand. It has been copied to the clipboard"
+        echo "source $venv_dir/$py_ver/bin/activate" | {{clipboard}}
     else
         echo -e "{{color_red}}Activate script not found in $venv_dir/$py_ver{{color_normal}}"
         exit 1
     fi
- 
