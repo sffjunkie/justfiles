@@ -9,9 +9,8 @@ import 'virtualenv.just'
 default_python_version := '3.11'
 
 venv_home := env_var_or_default("DEVELOPMENT_VENV_HOME", dev_home + "/venv")
-import_name := env_var_or_default("PROJECT_PYTHON_IMPORT", project_name)
+python_package := env_var_or_default("PROJECT_PYTHON_PACKAGE", project_name)
 
-pkg_src_dir := './src/' + import_name + '/'
 docs_src_dir := './src/docs/'
 docs_build_dir := './docs/'
 tests_dir := './tests/'
