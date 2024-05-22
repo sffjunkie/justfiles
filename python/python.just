@@ -15,7 +15,7 @@ docs_src_dir := './src/docs/'
 docs_build_dir := './docs/'
 tests_dir := './tests/'
 
-test_tools := 'coverage mypy pyinstrument pytest pytest-cov pytest-custom_exit_code pytest-dotenv python-dotenv[cli] tox'
+test_tools := 'coverage debugpy mypy pyinstrument pytest pytest-cov pytest-custom_exit_code pytest-dotenv python-dotenv[cli] tox'
 
 # Initialize python project with a venv, project manager, pyproject.toml, dev packages and docs
 init-devenv: vcs-init init-venv-python init-pyproject init-dev-pkgs init-docs
