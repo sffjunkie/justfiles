@@ -30,13 +30,13 @@ build-docs: sphinx-build-docs
 test-docs: sphinx-test-docs
 
 # Run unit tests
-test-unit *args: pytest-test-unit {{args}}
+test-unit *args: (pytest-test-unit {{args}})
 
 # Run integration tests
-test-integration *args: pytest-test-integration {{args}}
+test-integration *args: (pytest-test-integration {{args}})
 
 # Generate test coverage metrics
-test-coverage *args: coverage-test-coverage {{args}}
+test-coverage *args: (coverage-test-coverage {{args}})
 
 # Generate test coverage HTML report
 test-coverage-html: coverage-test-coverage-html
