@@ -44,12 +44,6 @@ test-coverage-html: coverage-test-coverage-html
 # Show test coverage in the terminal
 test-coverage-term: coverage-test-coverage-term
 
-# Profile the python module
-profile-module *args: (pyinstrument-profile-module args)
-
-# Profile a python script
-profile-script script *args: (pyinstrument-profile-script script args)
-
 # Run a python repl
 [no-cd]
 repl:
